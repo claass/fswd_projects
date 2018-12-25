@@ -1,6 +1,10 @@
-# linuxconfig
+# Linux Server Configuration w/ SSH Access
 
-###
+## About this project:
+Brief introduction to setting up an instance on AWS and securing access through SSH
+
+## Details
+### Access points
 * IP address:   52.40.8.107
 * SSH Port:     2200
 * URL:          http://ec2-52-40-8-107.us-west-2.compute.amazonaws.com/
