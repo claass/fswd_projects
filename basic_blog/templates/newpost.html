@@ -1,0 +1,17 @@
+	{% extends "base.html" %} {% block content %}
+
+	<form method="post">
+		<input class="subject_input" name="subject" placeholder="Write a title" type=
+		"string" value="{{subject}}"><br>
+		<br>
+
+		<textarea class="content_input" name="content" placeholder=
+		"Write some content">{{content}}</textarea><br>
+		<br>
+		<input class="btn btn-default" name="button" type="submit" value="Submit">
+		<input class="btn btn-default" name="button" type="submit" value="Cancel">
+	</form>
+
+
+	<p>{{error}}</p>
+	{% endblock %}

@@ -1,0 +1,35 @@
+	{% extends "base.html" %} {% block content %}
+
+	<form method="post">
+		<table>
+			<tr>
+				<td>User name:</td>
+
+				<td><input class="subject_input" name="username" type="string" value=
+				"{{username}}">
+				</td>
+
+				<td class="signup_error">
+				</td>
+			</tr>
+
+			<tr>
+				<td>Password:</td>
+
+				<td><input class="subject_input" name="password" type="password" value="">
+				</td>
+
+				<td class="signup_error">
+				</td>
+			</tr>
+		</table>
+		<br>
+		<input class="btn btn-default" name="button" type="submit" value="Submit">
+		<input class="btn btn-default" name="button" type="submit" value="Cancel">
+
+		<p>{{login_error}}</p>
+	</form>
+
+
+	<p>Click here to <a href="/signup">create an account</a></p>
+	{% endblock %}

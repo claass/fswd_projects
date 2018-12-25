@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<div class='row'>
+		<div class='col-sm-9 subject'>
+			{{entry.subject}}
+		</div>
+		<div class='row col-sm-3 text-right edit_button'>
+			{% if user.username == entry.author %}
+				<form method="post">
+					<input type="submit" name="entry" class="btn btn-default right-align" value="Edit/Delete">
+				</form>
+			{% endif %}
+			{% if user and (user.username != entry.author) %}
+				{% if user_like %}
+					<form method="post">
+						<input type="submit" name="like" class="btn btn-success right-align" value="Liked">
+					</form>
+				{% else %}
+					<form method="post">
+						<input type="submit" name="like" class="btn btn-default right-align" value="Like">
+					</form>
+				{% endif %}
+			{% endif %}
+		</div>
+    </div>
+    <p class='date'>Posted on {{entry.date.date()}} by {{entry.author}}</p>
+    <br>
+
+    <div class='row'> 
+    	<div class='col-sm-12'>
+			<div class="content">{{entry.render() | safe }}</div>
+			<hr>
+		</div>
+	</div>
+
+	<div class='row'>
+		<div class='col-sm-12'>
+			{% if total_likes > 0 %}
+			<p><strong>{{total_likes}} users </strong> liked this entry.</p>
+			{% endif %}
+
+			{% for comment in comments %}
+				<p>Comment by <strong>{{comment.author}}:</strong></p>
+				<p>{{comment.content}}</p>
+
+				{% if user.username==comment.author %}
+					<a href="/post/{{ entry.key.id() }}/{{ comment.key.id() }}/edit" class='btn btn-default'> Edit/Delete </a>
+					<br>
+				{% endif %}
+				<br>
+			{% endfor %}
+
+			{% if user %}
+				<form method="post">
+					<textarea name="content" class="content_input" placeholder="Write a comment">{{content}}</textarea>
+					<br>
+					<input type="submit" name="comment_post" class="btn btn-default" value="Submit">
+					<p>{{comment_error}}</p>
+				</form>
+			{% endif %}
+		</div>
+	</div>
+
+
+{% endblock %}

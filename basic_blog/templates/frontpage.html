@@ -1,0 +1,24 @@
+	{% extends "base.html" %} {% block content %} {% for entry in entries %}
+	<a href="/post/{{entry.key.id()}}">
+	<div class="entry">
+		<div class="subject">
+			{{entry.subject}}
+		</div>
+
+
+		<p class='date'>Posted on {{entry.date.date()}} by {{entry.author}}</p>
+
+
+		<div class="content">
+			{{ entry.render()[:500]+ "..." | safe }}
+		</div>
+	</div></a>
+
+	<hr>
+	{% endfor %}
+
+	<div class="footer">
+		<p><a href="https://thenounproject.com/term/lion/436689/">"Lion"</a> icon by
+		Yu luck; The Noun Project</p>
+	</div>
+	{% endblock %}
