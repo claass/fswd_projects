@@ -6,11 +6,8 @@ my GitHub profile. **Each project needs a thorough overhaul and some code cleanu
 
 
 ## Project included:
-1. Basic Blog
-  Creating a basic blogging platform on Google App Engine utilizing Flask.
-  Also dabbles with (fairly unsafe) account creation.
-2. Neighborhood Map
-  Getting familiar with AJAX through putting my favorite bakeries in SF on a
-  map via Google Map's API and some simple JavaSCript.
-3. Linux Config
-  Introduction to setting up an instance on AWS and securing access through SSH
+1. **Basic Blog** - Creating a basic blog on Google App Engine utilizing Flask.
+    Also dabbles with (fairly unsafe) account creation and warehousing.
+2. **Neighborhood Map** - Getting familiar with AJAX by putting my favorite bakeries in SF
+    on a map via Google Map's API and some simple JavaSCript.
+3. **Linux Config** - Intro to AWS by setting up an instance and securing access through SSH
